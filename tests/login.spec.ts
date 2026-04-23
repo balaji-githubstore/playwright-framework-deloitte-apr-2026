@@ -1,10 +1,7 @@
 import { test, expect } from '../fixtures/base.js';
 
-// description for verify login function 
-//create test - verify valid login
-//create test - verify invalid login
-
 test.describe("OrangeHRM Login Function  Tests", () => {
+  
   test('verify invalid login', async ({ page }) => {
     await page.locator("xpath=//input[@name='username']").fill('john')
     await page.locator("xpath=//input[@name='password']").fill('john123')
