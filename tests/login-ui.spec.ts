@@ -1,11 +1,6 @@
-import { test, expect } from '@playwright/test';
-
+import { test, expect } from '../fixtures/base.js';
 
 test.describe("OrangeHRM Login UI Tests", () => {
-
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-  });
 
   test('verify title', async ({ page }) => {
     await expect(page).toHaveTitle('OrangeHRM')
@@ -18,8 +13,8 @@ test.describe("OrangeHRM Login UI Tests", () => {
 
   //verify placeholder of username and password
   test('verify placeholder', async ({ page }) => {
-    await expect(page.locator("xpath=//input[@name='username']")).toHaveAttribute('placeholder', 'Username')
-    await expect(page.locator("xpath=//input[@name='password']")).toHaveAttribute('placeholder', 'Password')
+    await expect.soft(page.locator("xpath=//input[@name='username']")).toHaveAttribute('placeholder', 'Username')
+    await expect.soft(page.locator("xpath=//input[@name='password']")).toHaveAttribute('placeholder', 'Password')
   })
 })
 
