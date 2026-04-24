@@ -30,5 +30,4 @@ test.describe("OrangeHRM Login Function  Tests", () => {
       await expect(page.locator("xpath=//h6[text()='Dashboard']")).toHaveText(expected_value)
     });
   }
-
 })
