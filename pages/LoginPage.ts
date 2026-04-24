@@ -32,6 +32,7 @@ class LoginPage extends PlaywrightKeywords {
     }
     async verifyPasswordPlaceholder(placeholderValue: string): Promise<void> {
         await expect.soft(this.page.locator(PASSWORD_LOCATOR)).toHaveAttribute('placeholder', placeholderValue)
+        // await this.assertElementHasAttribute(PASSWORD_LOCATOR, 'placeholder', placeholderValue);
     }
 }
 
