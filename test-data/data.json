@@ -22,5 +22,25 @@
             "password": "admin123",
             "expected_value": "Dashboard"
         }
+    ],
+    "addEmployeeData": [
+        {
+            "username": "Admin",
+            "password": "admin123",
+            "firstName": "john",
+            "middleName": "m",
+            "lastName": "wick",
+            "expectedProfileName": "john wick",
+            "expectedFirstName": "john"
+        },
+        {
+            "username": "Admin",
+            "password": "admin123",
+            "firstName": "ken",
+            "middleName": "m",
+            "lastName": "wick",
+            "expectedProfileName": "ken wick",
+            "expectedFirstName": "ken"
+        }
     ]
 }

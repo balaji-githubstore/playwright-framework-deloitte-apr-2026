@@ -1,20 +1,42 @@
 import { test, expect } from '../fixtures/base.js';
+import { LoginPage } from '../pages/LoginPage.js';
+import { MainPage } from '../pages/MainPage.js';
+import { JsonUtils } from '../utils/json-utlis.js';
 
 test.describe("Employee management tests", () => {
-  test('verify adding new employee', async ({ page }) => {
-    await page.locator("xpath=//input[@name='username']").fill('Admin')
-    await page.locator("xpath=//input[@name='password']").fill('admin123')
-    await page.locator("xpath=//button[contains(normalize-space(),'Login')]").click()
-   
-    //click on PiM menu
-    //click on Add Employee
-    //enter firstname as john
-    //enter middle name as w
-    //enter lastname as wick
-    //click on save
-    //validate profile name - john wick
-    //validate firstname in the textbox 
-    //await expect.soft(page.locator("xpath=//input[@name='username']")).toHaveAttribute('value', 'john')
-   
-  });
+
+  for (const { username, password, firstName, middleName, lastName, expectedProfileName, expectedFirstName } of JsonUtils.getJson('addEmployeeData')) {
+
+    test(`verify valid login: ${firstName} and ${lastName}`, async ({ page }) => {
+      test('verify adding new employee', async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.fillUsername(username);
+        await loginPage.fillPassword(password);
+        await loginPage.clickLogin();
+
+        //  MainPage
+        const mainPage = new MainPage(page);
+        //click on PiM menu
+        await mainPage.clickOnPIMMenu();
+
+        //PIMPage
+        //click on Add Employee
+
+        //AddEmployeePage
+        //enter firstname as john
+        //enter middle name as w
+        //enter lastname as wick
+        //click on save
+
+        //PersonDetailPage 
+        //validate profile name - john wick
+        //validate firstname in the textbox 
+        //await expect.soft(page.locator("xpath=//input[@name='username']")).toHaveAttribute('value', 'john')
+
+      });
+    });
+  }
+
+
+
 })
