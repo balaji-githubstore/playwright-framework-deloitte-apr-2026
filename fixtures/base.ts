@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect,type Page } from '@playwright/test';
 // import { URLPattern } from 'node:url';
 
  test.beforeEach(async ({ page }) => {
@@ -7,4 +7,4 @@ import { test, expect } from '@playwright/test';
     // await expect(page).toHaveURL({new URLPattern({ pathname: '/docs/*' })})
   });
 
-  export {test,expect}
+  export {test,expect,type Page}
