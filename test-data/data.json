@@ -12,7 +12,7 @@
         },
         {
             "username": "peter",
-            "password": "kim123",
+            "password": "peter123",
             "expected_error": "Invalid credentials"
         }
     ],
