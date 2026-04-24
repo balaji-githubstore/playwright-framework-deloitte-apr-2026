@@ -1,6 +1,6 @@
+import XLSX from 'xlsx'
 
 const EXCEL_FILE = 'test-data/hrm-data.xlsx'
-import XLSX from 'xlsx'
 
 class ExcelUtils {
 
