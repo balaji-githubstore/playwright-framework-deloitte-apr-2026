@@ -24,11 +24,11 @@ class LoginPage {
     async verifyInvalidErrorMessage(expected_error: string): Promise<void> {
         await expect(this.page.locator(ERROR_LOCATOR)).toHaveText(expected_error)
     }
-    async verifyUserNamePlaceholder(): Promise<void> {
-        await expect.soft(this.page.locator(USERNAME_LOCATOR)).toHaveAttribute('placeholder', 'Username')
+    async verifyUserNamePlaceholder(placeholderValue: string): Promise<void> {
+        await expect.soft(this.page.locator(USERNAME_LOCATOR)).toHaveAttribute('placeholder', placeholderValue)
     }
-    async verifyPasswordPlaceholder(): Promise<void> {
-        await expect.soft(this.page.locator(PASSWORD_LOCATOR)).toHaveAttribute('placeholder', 'Password')
+    async verifyPasswordPlaceholder(placeholderValue: string): Promise<void> {
+        await expect.soft(this.page.locator(PASSWORD_LOCATOR)).toHaveAttribute('placeholder', placeholderValue)
     }
 }
 
