@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-const JSON_FILE='test-data/data.json'
+const JSON_FILE = 'test-data/data.json'
 
 class JsonUtils {
     // static getJsonData(): any {
@@ -13,10 +13,9 @@ class JsonUtils {
     //     return data[key];
     // }
 
-    static getJson(key?:string): any {
+    static getJson(key?: string): any {
         const data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf-8'))
-        if(key==undefined)
-        {
+        if (key == undefined) {
             return data;
         }
         return data[key];
@@ -24,3 +23,4 @@ class JsonUtils {
 }
 
 
+export { JsonUtils }
