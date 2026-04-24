@@ -1,12 +1,12 @@
 import { expect, type Page } from '../fixtures/base.js'
+import { PlaywrightKeywords } from './basepage/PlaywrightKeywords.js';
 
 const PIMMENULOCATOR = "//span[text()='PIM']"
 
-class MainPage {
-    private readonly page: Page;
+class MainPage extends PlaywrightKeywords {
 
     constructor(page: Page) {
-        this.page = page;
+        super(page)
     }
 
     async clickOnPIMMenu(): Promise<void> {
