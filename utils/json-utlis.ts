@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-const JSON_FILE='test-data/new-pets.json'
+const JSON_FILE='test-data/data.json'
 
 class JsonUtils {
     // static getJsonData(): any {
