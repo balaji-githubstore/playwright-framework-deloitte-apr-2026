@@ -1,6 +1,7 @@
 import { expect, type Page } from '../../fixtures/base.js'
 
 class PlaywrightKeywords {
+
     protected readonly page: Page;
 
     constructor(page: Page) {

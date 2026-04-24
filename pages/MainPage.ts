@@ -10,7 +10,7 @@ class MainPage extends PlaywrightKeywords {
     }
 
     async clickOnPIMMenu(): Promise<void> {
-        this.page.locator(PIMMENULOCATOR).click();
+        this.clickElement(PIMMENULOCATOR);
     }
 }
 
