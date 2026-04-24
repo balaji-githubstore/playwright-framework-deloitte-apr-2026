@@ -16,7 +16,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   timeout: 50 * 1000,
-
+  
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -38,6 +38,7 @@ export default defineConfig({
     baseURL: 'https://opensource-demo.orangehrmlive.com/',
     // viewport:{width:500,height:500}
     // ,
+     screenshot: 'only-on-failure',
   },
 
   /* Configure projects for major browsers */
