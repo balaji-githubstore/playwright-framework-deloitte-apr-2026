@@ -1,12 +1,12 @@
 import { expect, type Page } from '../fixtures/base.js'
 
-const USERNAME_LOCATOR = "xpath=//input[@name='username']"
-const PASSWORD_LOCATOR = "xpath=//input[@name='password']"
-const LOGIN_LOCATOR = "xpath=//button[contains(normalize-space(),'Login')]"
-const ERROR_LOCATOR = "xpath=//p[text()='Invalid credentials']"
+const USERNAME_LOCATOR:string = "xpath=//input[@name='username']"
+const PASSWORD_LOCATOR:string = "xpath=//input[@name='password']"
+const LOGIN_LOCATOR:string = "xpath=//button[contains(normalize-space(),'Login')]"
+const ERROR_LOCATOR:string = "xpath=//p[text()='Invalid credentials']"
 
 class LoginPage {
-    private readonly page: any;
+    private readonly page: Page;
 
     constructor(page: Page) {
         this.page = page;
