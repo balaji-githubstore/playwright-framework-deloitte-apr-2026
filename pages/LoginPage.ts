@@ -27,6 +27,9 @@ class LoginPage {
     async verifyUserNamePlaceholder(): Promise<void> {
         await expect.soft(this.page.locator(USERNAME_LOCATOR)).toHaveAttribute('placeholder', 'Username')
     }
+    async verifyPasswordPlaceholder(): Promise<void> {
+        await expect.soft(this.page.locator(PASSWORD_LOCATOR)).toHaveAttribute('placeholder', 'Password')
+    }
 }
 
 export { LoginPage }
