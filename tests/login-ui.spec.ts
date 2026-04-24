@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/base.js';
 
 test.describe("OrangeHRM Login UI Tests", () => {
 
-  test('verify title',{ tag: '@regression',}, async ({ page }) => {
+  test('verify title',{ tag: ['@regression','@smoke']}, async ({ page }) => {
     await expect(page).toHaveTitle('OrangeHRM')
   });
 

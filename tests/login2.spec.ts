@@ -28,3 +28,5 @@ test.describe("OrangeHRM Login Function  Tests", () => {
     });
   }
 });
+
+// npx playwright test --grep "(?=.*@smoke)(?=.*@regression)"
