@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/base.js';
 import { invalidLoginData } from '../utils/data-source.js'
 import { JsonUtils } from '../utils/json-utlis.js'
+import { ExcelUtils } from '../utils/excel-utils.js'
 
 test.describe("OrangeHRM Login Function  Tests", () => {
 
@@ -28,6 +29,15 @@ test.describe("OrangeHRM Login Function  Tests", () => {
       await page.locator("xpath=//input[@name='password']").fill(password)
       await page.locator("xpath=//button[contains(normalize-space(),'Login')]").click()
       await expect(page.locator("xpath=//h6[text()='Dashboard']")).toHaveText(expected_value)
+    });
+  }
+
+  for (const { username, password, expected_error } of ExcelUtils.getSheetToJson('invalidLoginData')) {
+    test(`verify invalid login from excel: ${username} and ${password}`, async ({ page }) => {
+      await page.locator("xpath=//input[@name='username']").fill(username)
+      await page.locator("xpath=//input[@name='password']").fill(password)
+      await page.locator("xpath=//button[contains(normalize-space(),'Login')]").click()
+      await expect(page.locator("xpath=//p[text()='Invalid credentials']")).toHaveText(expected_error)
     });
   }
 })

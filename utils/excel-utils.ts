@@ -4,7 +4,7 @@ const EXCEL_FILE = 'test-data/hrm-data.xlsx'
 
 class ExcelUtils {
 
-    static readExcel(sheetname: string): any {
+    static getSheetToJson(sheetname: string): any {
 
         const workbook = XLSX.readFile(EXCEL_FILE)
         const sheet = workbook.Sheets[sheetname]
