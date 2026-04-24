@@ -22,3 +22,5 @@ class LoginPage {
     }
 
 }
+
+export { LoginPage }
